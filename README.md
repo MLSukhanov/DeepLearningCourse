@@ -45,5 +45,5 @@
     
 9) Вы можете скопировать выходной файл отчета predictions.txt из Docker контейнера на хост с использованием следующей команды:
     ```console
-    docker cp conclassifseven:/app/output/predictions.txt <директория, в которую Вы хотите сохранить отчет классификации>
+    docker cp conclassifseven:/app/output/predictions.txt <путь до директории, в которую Вы хотите сохранить отчет классификации>
     ```
