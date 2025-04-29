@@ -11,3 +11,14 @@
 самостоятельно ввиду их отсутствия в опорном проекте.
 
 # Инструкция по запуску проекта
+1) Скопируйте настоящий репозиторий:
+   
+    ```console
+    git clone https://github.com/MLSukhanov/DeepLearningCourse.git
+    ```
+2) Перейдите в директорию со скопированным репозиторием и создайте три пустых папки:
+   - output
+   - temppng
+   - weights
+  
+3) Скачайте веса модели DenseNet121 по [ссылке](https://drive.google.com/drive/folders/1HNfpwCGTEr1p6-g0dvUWQYmvR4N7Bbyp?usp=sharing) и разместите их в папке weights. Таким образом в папке weights должны находиться только пять файлов формата .pth.
