@@ -38,7 +38,12 @@
     docker build -t classifseven .
     ```
     
-8) Дождитесь завершения сборки образа. Затем запустите Docker контейнер с помощью следующей команды:
+8) Запустите Docker контейнер с помощью следующей команды:
     ```console
     docker run -it --name conclassifseven classifseven
+    ```
+    
+9) Вы можете скопировать выходной файл отчета predictions.txt из Docker контейнера на хост с использованием следующей команды:
+    ```console
+    docker cp conclassifseven:/app/output/predictions.txt <директория, в которую Вы хотите сохранить отчет классификации>
     ```
