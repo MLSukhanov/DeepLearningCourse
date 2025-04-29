@@ -21,4 +21,13 @@
    - temppng
    - weights
   
-3) Скачайте веса модели DenseNet121 по [ссылке](https://drive.google.com/drive/folders/1HNfpwCGTEr1p6-g0dvUWQYmvR4N7Bbyp?usp=sharing) и разместите их в папке weights. Таким образом в папке weights должны находиться только пять файлов формата .pth.
+3) Скачайте веса модели DenseNet121 по [ссылке](https://drive.google.com/drive/folders/1HNfpwCGTEr1p6-g0dvUWQYmvR4N7Bbyp?usp=sharing) и разместите их в папке weights. Таким образом в папке weights должны находиться только пять файлов формата .pth
+
+4) Запустите приложение Docker Desktop
+
+5) Запустите Windows PowerShell (при использовании командной строки наблюдались проблемы с кодировкой вывода, что в итоге приводило к неработоспособности проекта)
+   
+6) Перейдите в директорию со скопированным репозиторием с помощью команды cd:
+    ```console
+    cd DeepLearningCourse
+    ```
