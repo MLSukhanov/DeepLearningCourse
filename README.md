@@ -22,10 +22,12 @@
     cd DeepLearningCourse
     ```
     
-3) Cоздайте в этой директории три пустых папки:
-   - output
-   - temppng
-   - weights
+3) Cоздайте в этой директории три пустых папки, используя команду mkdir:
+   ```console
+   mkdir output
+   mkdir temppng
+   mkdir weights
+   ```
   
 4) Скачайте веса модели DenseNet121 по [ссылке](https://drive.google.com/drive/folders/1HNfpwCGTEr1p6-g0dvUWQYmvR4N7Bbyp?usp=sharing) и разместите их в папке weights. Таким образом в папке weights должны находиться только пять файлов формата .pth
 
@@ -47,3 +49,4 @@
     ```console
     docker cp conclassifseven:/app/output/predictions.txt <путь до директории, в которую Вы хотите сохранить отчет классификации>
     ```
+# Возможные проблемы
