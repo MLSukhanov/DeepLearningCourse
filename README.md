@@ -28,47 +28,84 @@
    mkdir temppng
    mkdir weights
    ```
+   После выполнения третьего шага инструкции дерево файловой структуры проекта должно выглядеть так, как это показано на схеме ниже:
+   ```bash
+   ├── dcm
+   │   ├── IMG-0008-00226.dcm
+   │   ├── IMG-0008-00250.dcm
+   │   ├── IMG-0008-00271.dcm
+   │   └── IMG-0008-00303.dcm
+   ├── etalon
+   │   ├── IMG-0008-00226.png
+   │   ├── IMG-0008-00250.png
+   │   ├── IMG-0008-00271.png
+   │   ├── IMG-0008-00303.png
+   │   ├── predictions.txt
+   │   └── time.txt
+   ├── output
+   │   └── 
+   ├── src
+   │   ├── inference.py
+   │   ├── preprocess.py
+   │   └── run_and_compare.txt
+   ├── temppng
+   │   └── 
+   ├── weights
+   │   └── 
+   ├── Dockerfile
+   ├── README.md
+   └── requirements.txt
+   ```
   
-4) Скачайте веса модели DenseNet121 по [ссылке](https://drive.google.com/drive/folders/1HNfpwCGTEr1p6-g0dvUWQYmvR4N7Bbyp?usp=sharing) и разместите их в папке weights. Таким образом в папке weights должны находиться только пять файлов формата .pth
+5) Скачайте веса модели DenseNet121 по [ссылке](https://drive.google.com/drive/folders/1HNfpwCGTEr1p6-g0dvUWQYmvR4N7Bbyp?usp=sharing) и разместите их в папке weights. Таким образом, в папке weights должны находиться только пять файлов формата .pth:
+   ```bash
+   ├── dcm
+   │   ├── IMG-0008-00226.dcm
+   │   ├── IMG-0008-00250.dcm
+   │   ├── IMG-0008-00271.dcm
+   │   └── IMG-0008-00303.dcm
+   ├── etalon
+   │   ├── IMG-0008-00226.png
+   │   ├── IMG-0008-00250.png
+   │   ├── IMG-0008-00271.png
+   │   ├── IMG-0008-00303.png
+   │   ├── predictions.txt
+   │   └── time.txt
+   ├── output
+   ├── src
+   │   ├── inference.py
+   │   ├── preprocess.py
+   │   └── run_and_compare.txt
+   ├── temppng
+   ├── weights
+   │   ├── model_epoch_best_0.pth
+   │   ├── model_epoch_best_1.pth
+   │   ├── model_epoch_best_2.pth
+   │   ├── model_epoch_best_3.pth
+   │   └── model_epoch_best_4.pth
+   ├── Dockerfile
+   ├── README.md
+   └── requirements.txt
+   ```
 
-5) Запустите приложение Docker Desktop
+6) Запустите приложение Docker Desktop
 
-6) Запустите Windows PowerShell (при использовании командной строки наблюдались проблемы с кодировкой вывода, что в итоге приводило к неработоспособности проекта)
+7) Запустите Windows PowerShell, если не сделали этого ранее (при использовании командной строки наблюдались проблемы с кодировкой вывода, что в итоге приводило к тотальной неработоспособности проекта)
    
-7) Выполните команду для сборки образа Docker:
+8) Выполните команду для сборки образа Docker:
     ```console
     docker build -t classifseven .
     ```
     
-8) Запустите Docker контейнер с помощью следующей команды:
+9) Запустите Docker контейнер с помощью следующей команды:
     ```console
     docker run -it --name conclassifseven classifseven
     ```
     
-9) Вы можете скопировать выходной файл отчета predictions.txt из Docker контейнера на хост с использованием следующей команды:
+10) Вы можете скопировать выходной файл отчета predictions.txt из Docker контейнера на хост с использованием следующей команды:
     ```console
-    docker cp conclassifseven:/app/output/predictions.txt <путь до директории, в которую Вы хотите сохранить отчет классификации>
+    docker cp conclassifseven:/app/output/predictions.txt <абсолютный путь до директории, в которую Вы хотите сохранить отчет классификации>
     ```
 # Возможные проблемы
  про кодировку txt файлов
  про кодировку вывода
-```bash
-├── app
-│   ├── css
-│   │   ├── **/*.css
-│   ├── favicon.ico
-│   ├── images
-│   ├── index.html
-│   ├── js
-│   │   ├── **/*.js
-│   └── partials/template
-├── dist (or build)
-├── node_modules
-├── bower_components (if using bower)
-├── test
-├── Gruntfile.js/gulpfile.js
-├── README.md
-├── package.json
-├── bower.json (if using bower)
-└── .gitignore
-```
