@@ -59,7 +59,7 @@ if __name__ == '__main__':
     if not validate_png_files(temp_dir):
         print('Обнаружены некорректные PNG-файлы')
         sys.exit(1)
-    print('Предобработка медицинских изображений выполнена успешно\n')
+    print('\nПредобработка медицинских изображений выполнена успешно\n')
 
     # Сравнение количества PNG до запуска инференса
     etalon_dir = '/app/etalon'
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     if status_inf != 0:
         print('Ошибка выполнения классификатора')
         sys.exit(1)
-    print('Инференс успешно выполнен\n')
+    print('\nИнференс успешно выполнен\n')
 
     # Вывод и сохранение времени
     out_dir = '/app/output'
@@ -106,7 +106,7 @@ if __name__ == '__main__':
     # Сравнение predictions.txt
     etalon_preds = parse_predictions(os.path.join(etalon_dir, 'predictions.txt'))
     output_preds = parse_predictions(os.path.join(out_dir, 'predictions.txt'))
-    print('Сравнение результатов классификации:')
+    print('\nСравнение результатов классификации:')
     for img_name, e_vals in etalon_preds.items():
         if img_name in output_preds:
             o_vals = output_preds[img_name]
@@ -124,6 +124,6 @@ if __name__ == '__main__':
                 dev_pre = float(line.split(':')[1])
             elif 'inference_time_s' in line:
                 dev_inf = float(line.split(':')[1])
-    print('Сравнение времени выполнения:')
+    print('\nСравнение времени выполнения:')
     print(f'  Разработчик: preprocess {dev_pre:.2f} мс, inference {dev_inf:.2f} с')
     print(f'  Пользователь: preprocess {t_pre_ms:.2f} мс, inference {t_inf_s:.2f} с')
